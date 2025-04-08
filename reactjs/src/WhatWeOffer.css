@@ -1,0 +1,217 @@
+/* What We Offer Section Styles */
+.what-we-offer-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #1a1a2e, #16213e); /* Dark gradient background instead of image */
+  color: #fff;
+}
+
+.offer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header styling */
+.offer-header {
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.offer-container h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #ff69b4; /* Pink heading matching logo */
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.header-underline {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(to right, #ff69b4, #9370db); /* Pink to purple gradient */
+  margin: 0 auto;
+}
+
+.offer-intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #eaeaea;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+/* Grid styling */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.offer-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 4px solid transparent;
+  overflow: hidden;
+}
+
+.offer-item:nth-child(1) {
+  border-bottom-color: #ff69b4; /* Pink */
+}
+
+.offer-item:nth-child(2) {
+  border-bottom-color: #9370db; /* Purple */
+}
+
+.offer-item:nth-child(3) {
+  border-bottom-color: #00bfff; /* Blue */
+}
+
+.offer-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+}
+
+/* Image styling */
+.offer-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.offer-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.offer-item:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 105, 180, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.offer-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay span {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+/* Text styling */
+.offer-item h3 {
+  font-size: 26px;
+  color: #ff69b4; /* Pink headers */
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.offer-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #eaeaea;
+  margin-bottom: 20px;
+}
+
+/* Feature list */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  text-align: left;
+}
+
+.feature-list li {
+  padding: 8px 0 8px 25px;
+  position: relative;
+  color: #eaeaea;
+}
+
+.feature-list li:before {
+  content: "✦"; /* Star bullet point */
+  position: absolute;
+  left: 0;
+  color: #ff69b4; /* Pink bullet points */
+}
+
+/* Button styling */
+.learn-more-btn {
+  background: linear-gradient(to right, #ff69b4, #9370db);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+}
+
+.learn-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* Research highlight section */
+.research-highlight {
+  background: rgba(147, 112, 219, 0.2); /* Light purple */
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 850px;
+  margin: 0 auto;
+  border-left: 5px solid #9370db;
+}
+
+.research-highlight h3 {
+  color: #9370db; /* Purple heading */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.research-highlight p {
+  color: #eaeaea;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .offer-item {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .offer-container h2 {
+    font-size: 36px;
+  }
+}

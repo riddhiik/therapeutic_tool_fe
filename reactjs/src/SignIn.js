@@ -70,24 +70,55 @@ const SignIn = () => {
   return (
     <div className="signin-container">
       <div className="signin-box">
-        <h2>Sign In</h2>
+        <div className="logo-container">
+          <div className="logo-circle">
+            <span>VR</span>
+          </div>
+        </div>
+        <h2>Welcome Back!</h2>
+        <p className="signin-intro">Enter your details to continue your VR adventure</p>
+        
         <form onSubmit={handleSubmit}>
-          <input 
-            type="email" 
-            placeholder="Email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required
-          />
-          <input 
-            type="password" 
-            placeholder="Password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required
-          />
-          <button type="submit" className="button signin-btn">Sign In</button>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input 
+              type="email" 
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input 
+              type="password" 
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          
+          <div className="forgot-password">
+            <a href="#forgot">Forgot password?</a>
+          </div>
+          
+          <button type="submit" className="signin-button">Sign In</button>
+          
+          <div className="register-link">
+            Don't have an account? <a href="/register">Register here</a>
+          </div>
         </form>
+      </div>
+      <div className="stars-container">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
       </div>
     </div>
   );

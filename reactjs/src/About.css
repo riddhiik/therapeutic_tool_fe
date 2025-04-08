@@ -1,0 +1,149 @@
+/* About Us Section Styles */
+.about-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #1a1a2e, #16213e); /* Dark gradient background instead of image */
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Image styling */
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4); /* Pink VR glow effect */
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Content styling */
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #ff69b4; /* Pink heading matching your logo color */
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.about-content h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #ff69b4, #9370db); /* Pink to purple gradient */
+}
+
+.about-intro {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #eaeaea;
+  margin-bottom: 25px;
+}
+
+/* Benefits grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #ff69b4;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3);
+}
+
+.benefit-card h3 {
+  font-size: 18px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: #eaeaea;
+}
+
+/* Mission statement styling */
+.mission-statement {
+  background: rgba(147, 112, 219, 0.2); /* Light purple background */
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 20px;
+  border-bottom: 4px solid #9370db;
+}
+
+.mission-statement h3 {
+  font-size: 22px;
+  color: #9370db; /* Purple accent color */
+  margin-bottom: 15px;
+}
+
+.mission-statement p {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-content h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .about-image {
+    margin-bottom: 30px;
+  }
+  
+  .benefit-card {
+    border-left: none;
+    border-top: 4px solid #ff69b4;
+  }
+}
