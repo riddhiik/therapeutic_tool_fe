@@ -1,22 +1,22 @@
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: #1a152b;
+  font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #ffe4f2, #e0d3ff);
 }
 
 .dashboard-container {
   display: flex;
   height: 100vh;
   width: 100%;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #1a152b, #2c1d3f);
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(to right, #fdf0ff, #e8e2fc);
   overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background: linear-gradient(180deg, #361642, #662671);
+  background: linear-gradient(180deg, #d36cd6, #ff90b3);
   color: white;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ body {
   padding-top: 2rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -32,18 +32,18 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 3rem;
-  font-size: 24px;
-  color: #ff69b4;
+  font-size: 26px;
+  color: #ff4fc9;
 }
 
 .vr-icon {
-  font-size: 30px;
-  color: #ff69b4;
+  font-size: 32px;
+  color: #ff4fc9;
 }
 
 .logo h2 {
-  font-size: 1.5rem;
-  color: #ff69b4;
+  font-size: 1.6rem;
+  color: #ffffff;
 }
 
 .nav-links {
@@ -53,7 +53,7 @@ body {
 .nav-links button {
   background: none;
   border: none;
-  color: white;
+  color: #fff;
   padding: 1rem 1.5rem;
   text-align: left;
   width: 100%;
@@ -61,44 +61,47 @@ body {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .nav-links button:hover,
 .nav-links button.active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.25);
   transform: scale(1.05);
   border-radius: 15px;
 }
 
-/* Main content */
+/* Main Section */
 .main-section {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-  background: #231933;
+  background: #fff1fc;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
 
+/* Header */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2f2044;
+  background: #ffd6f5;
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .greeting h1 {
   font-size: 2rem;
-  color: #ff69b4;
+  color: #c624a8;
   margin-bottom: 5px;
 }
 
 .greeting p {
   font-size: 1.1rem;
-  color: #d6c0e8;
+  color: #8c4cc4;
 }
 
 /* Profile avatar */
@@ -106,7 +109,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #8b4dac;
+  background-color: #ff8fe0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,15 +124,16 @@ body {
   transform: scale(1.05);
 }
 
-/* Activities Section */
+/* Activity Section */
 .activity-section {
   margin-top: 2.5rem;
 }
 
 .activity-section h3 {
   font-size: 1.5rem;
-  color: #ff69b4;
+  color: #cc3dda;
   margin-bottom: 1rem;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .activity-gallery {
@@ -143,7 +147,7 @@ body {
   height: 140px;
   border-radius: 15px;
   object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 

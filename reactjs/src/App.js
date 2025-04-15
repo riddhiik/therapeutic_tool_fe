@@ -142,15 +142,28 @@ import VRImage from './homephotos.png';
 import backgroundVideo from './background.mp4';
 
 import Dashboard from './components/Dashboard/Dashboard';
+import AssessmentCentre from "./components/AssessmentCentre/AssessmentCentre";
+import AssessmentResult from "./components/AssessmentCentre/AssessmentResult";
+import TherapyPlanner from "./components/TherapyPlanner/TherapyPlanner"; // ✅ Fixed path
+
 import About from "./About";
 import WhatWeOffer from "./WhatWeOffer";
 import Questions from "./Questions";
 import ContactUs from "./ContactUs";
 import Login from "./SignIn";
 import RegistrationForm from "./RegisterForm";
-import Assessment from "./Assessment";
 
-// Home Component
+const DashboardHome = () => (
+  <div>
+    <h3>✨ Here you can experience, learn, enjoy and play!</h3>
+    <div className="activity-gallery">
+      <img src="/images/download.jpeg" alt="VR Game " />
+      <img src="/images/Cool.jpg" alt="Meditation Zone" />
+      <img src="/images/Game.jpg" alt="VR Game " />
+    </div>
+  </div>
+);
+
 function Home() {
   return (
     <div id="home" className="home-section">
@@ -161,17 +174,12 @@ function Home() {
             With the power of virtual reality, VRJoy provides effective solutions and therapy for children,
             revolutionizing the way therapy is delivered and experienced.
           </p>
-          <Link to="/register" className="register-button">
-            Get Started
-          </Link>
+          <Link to="/register" className="register-button">Get Started</Link>
         </div>
-        
         <div className="image-content">
           <img src={VRImage} alt="Virtual Reality Therapy" />
         </div>
       </div>
-      
-      {/* Decorative elements */}
       <div className="floating-shapes">
         <div className="shape shape-1"></div>
         <div className="shape shape-2"></div>
@@ -182,10 +190,8 @@ function Home() {
   );
 }
 
-// Main App Component
 function AppContent() {
   const location = useLocation();
-
   const showNavbar = location.pathname === "/";
 
   const handleScroll = (sectionId) => {
@@ -197,7 +203,6 @@ function AppContent() {
 
   return (
     <div className="app-container">
-      {/* Video Background */}
       <div className="video-background">
         <video autoPlay loop muted>
           <source src={backgroundVideo} type="video/mp4" />
@@ -205,7 +210,6 @@ function AppContent() {
         </video>
       </div>
 
-      {/* Show Navbar only on homepage */}
       {showNavbar && (
         <header className="header">
           <div className="logo">
@@ -218,31 +222,38 @@ function AppContent() {
               <li><Link to="/" onClick={() => handleScroll("about")}>About Us</Link></li>
               <li><Link to="/" onClick={() => handleScroll("offer")}>What We Offer</Link></li>
               <li><Link to="/" onClick={() => handleScroll("contact")}>Contact</Link></li>
-              <li><Link to="/assessment">Assessment</Link></li>
+              <li><Link to="/dashboard">Dashboard</Link></li>
               <li><Link to="/login">Login</Link></li>
             </ul>
           </nav>
         </header>
       )}
 
-      {/* Routes */}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="page-content">
-              <Home />
-              <div id="about"><About /></div>
-              <div id="offer"><WhatWeOffer /></div>
-              <div id="questions"><Questions /></div>
-              <div id="contact"><ContactUs /></div>
-            </div>
-          }
-        />
+        {/* Landing Page */}
+        <Route path="/" element={
+          <div className="page-content">
+            <Home />
+            <div id="about"><About /></div>
+            <div id="offer"><WhatWeOffer /></div>
+            <div id="questions"><Questions /></div>
+            <div id="contact"><ContactUs /></div>
+          </div>
+        } />
+
+        {/* Authentication Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<RegistrationForm />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/assessment" element={<Assessment />} />
+
+        {/* Dashboard + Nested Routes */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<DashboardHome />} />
+          <Route path="assessment" element={<AssessmentCentre />} />
+          <Route path="assessment-result" element={<AssessmentResult />} />
+          <Route path="therapy" element={<TherapyPlanner />} /> {/* ✅ This now works */}
+          <Route path="games" element={<div>🎮 Games Section Coming Soon!</div>} />
+          <Route path="progress" element={<div>📈 Progress Report Coming Soon!</div>} />
+        </Route>
       </Routes>
     </div>
   );

@@ -305,4 +305,28 @@ input:focus {
   .register-box {
     padding: 30px 20px;
   }
+
+  /* All your CSS remains unchanged — just ensure input, label, .register-button, and form layout match the new JS fields */
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+select:focus {
+  border-color: #ff69b4;
+  outline: none;
+}
+
 }

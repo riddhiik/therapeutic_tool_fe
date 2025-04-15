@@ -128,6 +128,8 @@ const RegistrationForm = () => {
               />
             </div>
           </div>
+
+          
           
           <div className="form-group">
             <label htmlFor="email">Email</label>
